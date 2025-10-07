@@ -7,6 +7,16 @@ export class DepositDto {
     amount: number;
   
     @IsString()
-    @IsIn(['BTC', 'ETH'])
+    @IsIn(['BTC', 'ETH', 'USDT'])
     currency: string;
   }
+
+export class WithdrawalDto {
+  @IsNumber()
+  @IsPositive()
+  amount: number;
+
+  @IsString()
+  @IsIn(['BTC', 'ETH', 'USDT'])
+  currency: string;
+}
